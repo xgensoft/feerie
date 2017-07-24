@@ -1,0 +1,4 @@
+#!/bin/bash
+./clean.sh
+./prebuild.sh
+make

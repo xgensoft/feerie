@@ -1,0 +1,11 @@
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt.user
+feerie.creator.user
+Makefile
+bin/
+lib/
+cmake_install.cmake
+external/
+CMakeLists.txt.user
+*/doc/*

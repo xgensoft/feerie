@@ -1,0 +1,11 @@
+core/src/
+/usr/include
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.9.3/include/g++-v4
+core/src/feerie/factory
+core/tests/type
+core/src/feerie/type
+core/tests/factory
+core/src/feerie/node
+core/src/feerie/collection
+core/src/feerie
+core/src/feerie/tree

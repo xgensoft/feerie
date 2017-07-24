@@ -1,0 +1,10 @@
+Feerie project
+
+ABOUT
+
+    Feerie project
+
+BUILD
+
+    cmake .
+    make
