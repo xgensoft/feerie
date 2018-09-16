@@ -13,12 +13,18 @@
 namespace feerie
 {
     /**
-     * @brief Шаблон класса узла дерева.
-     * @details Шаблон класса узла дерева, наследуется от листа и содержит односвязный список дочерних листов и узлов.
+     * @brief Класса узла дерева.
+     * @details Класса узла дерева, наследуется от листа и содержит односвязный список дочерних листов и узлов.
      */
     class FrNode : FrLeaf
     {
     public:
+
+        FrNode() :
+            FrLeaf(),
+            leaves()
+        {
+        }
 
         inline const std::forward_list<FrLeaf*>& getLeaves() const
         {
@@ -27,19 +33,30 @@ namespace feerie
 
         inline void add(FrLeaf* leaf)
         {
-            leaves.push_front(leaf);
-            leaf->parent = this;
+            if(nullptr != leaf)
+            {
+                leaves.push_front(leaf);
+                leaf->parent = this;
+            }
         }
 
         inline void remove(FrLeaf* leaf)
         {
-            leaves.remove(leaf);
-            leaf->parent = nullptr;
+            if(nullptr != leaf)
+            {
+                leaves.remove(leaf);
+                leaf->parent = nullptr;
+            }
         }
 
-        inline void clear()
+        void clear()
         {
-            for(auto& leaf : leaves) leaf->parent = nullptr;
+            for(auto& leaf : leaves)
+            {
+                if(nullptr == leaf) continue;
+                leaf->parent = nullptr;
+            }
+
             leaves.clear();
         }
 

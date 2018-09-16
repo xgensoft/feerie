@@ -1,3 +1,4 @@
+core/doc/shared/FeerieFormat.txt
 core/src/feerie/factory/frfactory.h
 core/src/feerie/frcore.cpp
 core/src/feerie/frcore.h

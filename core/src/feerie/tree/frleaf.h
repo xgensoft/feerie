@@ -11,8 +11,9 @@ namespace feerie
     class FrNode;
 
     /**
-     * @brief Шаблон класса листа дерева.
-     * @details Шаблон класса листа корневого дерева. Содержит связь с предком.
+     * @brief Класса листа дерева.
+     * @details Класса листа корневого дерева. Содержит связь с предком и флаги.
+     * Базовый класс для листов и узлов.
      */
     class FrLeaf
     {
@@ -21,14 +22,24 @@ namespace feerie
 
     public:
 
+        FrLeaf() : parent(nullptr)
+        {
+        }
+
         inline FrNode* getParent() const
         {
             return parent;
         }
 
+        inline size_t getFlags() const
+        {
+            return flags;
+        }
+
     protected:
 
         FrNode* parent;
+        size_t flags;
 
     };
 
@@ -39,8 +50,13 @@ namespace feerie
     template<class Data>
     class FrDataLeaf : FrLeaf
     {
-
     public:
+
+        FrDataLeaf() :
+            FrLeaf(),
+            data()
+        {
+        }
 
         Data data;
 
